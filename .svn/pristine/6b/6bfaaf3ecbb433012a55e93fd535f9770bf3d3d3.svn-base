@@ -1,0 +1,38 @@
+
+package Lab;
+
+import java.util.Random;
+
+/**
+ * @author Sean R Hagen
+ * Version Apr 11, 2019 
+ */
+public class Employee {
+    private int id;
+    private String name;
+    private int dept;
+    private int hired;
+    
+    public Employee(){
+        Random rand = new Random();
+        id = rand.nextInt(100000000);
+        name = makeName();
+        dept = rand.nextInt(4) + 1;
+        hired = rand.nextInt(10) + 2008;
+    }
+    
+    private static String makeName(){
+        Random rand = new Random();
+        int length = rand.nextInt(5)+5;
+        String name = "";
+        for(int x = 0; x < length; x++){
+            name += (char)(rand.nextInt(26)+97);
+        }
+        return name;
+    }
+    
+    public String toString(){
+        return getClass().getName() + " ID:" + id + " NAME:" + name + " DEPT:" + dept + " HIRED:" + hired;
+    }
+
+}

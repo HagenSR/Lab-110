@@ -1,0 +1,133 @@
+package Lab;
+
+/*
+ * @author seanrHagen
+ * Version April 3 2019
+ */
+public final class TableCreator {
+
+    private String line;
+    private int[] biggest;
+    private final int[] testNumber;
+    private final MapEntryInt[] collisions;
+    private final String title;
+    private final String[] Collumn;
+    private final int padding = 4;
+
+    /**
+     * creates an TableCreatorTwo Instance
+     *
+     * @param title the Title of the Table
+     * @param testNumber
+     * @param collisions
+     * @param Collumn an Array of Strings Representing the titles of the
+     * collumns
+     */
+    public TableCreator(String title, int[] testNumber, MapEntryInt[] collisions, String... Collumn) {
+        this.title = title;
+        this.collisions = collisions;
+        this.Collumn = Collumn;
+        this.testNumber = testNumber;
+        lineCreator();
+        buildHeader();
+        buildLines();
+
+    }
+
+    /**
+     * uses print format to print out the numbers in each row, using print format to insert ","'s where applicable
+     */
+    public void buildLines() {
+        String fstring = "|  %," + (biggest[0] - padding) + "d  |  %," + (biggest[1] - padding) + "d  |  %," + (biggest[2] - padding) + "d  |\n";
+        for (int x = 0; x < testNumber.length; x++) {
+            System.out.println(line);
+            System.out.printf(fstring, testNumber[x], collisions[x].getKey(), collisions[x].getValue());
+        }
+        System.out.println(line);
+
+    }
+
+    /**
+     * creates the header block for the table, including title and collumn titles
+     * uses print format in multiple lines
+     */
+    public void buildHeader() {
+        int left = (line.length() / 2 + title.length() / 2);
+        int right = line.length() - left -2;
+        String fmate = "|%" + left + "s%" + right + "s|\n";
+        System.out.println(line);
+        System.out.printf(fmate, title, "");
+        System.out.println(line);
+        left = (biggest[0] / 2 + Collumn[0].length() / 2);
+        right = biggest[0] - left;
+        fmate =  "|%" + left + "s%" + right + "s";
+        System.out.printf(fmate, Collumn[0], " ");
+        left = (biggest[1] / 2 + Collumn[1].length() / 2) ;
+        right = (biggest[1] - left);
+        fmate =  "|%" + left + "s%" + right + "s";
+        System.out.printf(fmate, Collumn[1], "");
+        left = biggest[2] / 2 + Collumn[2].length() / 2;
+        right = (biggest[2] - left);
+        fmate =  "|%" + left + "s%" + right + "s|\n";
+        System.out.printf(fmate, Collumn[2], " ");
+    }
+
+    /**
+     * goes through the lengths given in the findTheBiggest method and returns a
+     * line corresponding to the length needed
+     */
+    public void lineCreator() {
+        findTheBiggest();
+        int[] lengths = biggest;
+        int total = lengths[0] + lengths[1] + lengths[2] + padding;
+        StringBuilder line = new StringBuilder(total + 4); //four being the number of "+" separators needed in the table
+        line.append("+");
+        for (int x : lengths) {
+            for (int y = 0; y < x; y++) {
+                line.append("-");
+            }
+            line.append("+");
+        }
+        line.trimToSize();
+        this.line = line.toString();
+    }
+
+    /**
+     * goes through the MapEntryInt and TestNumber arrays to find the longest
+     * value (String Length) in them with padding
+     *
+     * @return an array of int where the first entry is the longest testCount
+     * item, The second is the longest total Collisions count and the third is
+     * the longest max collisions count
+     */
+    private void findTheBiggest() {
+        int[] lengths = new int[3];
+        //sets the respective collumns to the length of thier headers
+        //then looks for longer entries in the collumns
+        lengths[0] = Collumn[0].length() + padding;
+        lengths[1] = Collumn[1].length() + padding;
+        lengths[2] = Collumn[2].length() + padding;
+        for (int y : testNumber) {
+            String temp = y + "";
+            if (lengths[0] < temp.length() + padding) {
+                lengths[0] = temp.length() + padding;
+            }
+        }
+        for (MapEntryInt x : collisions) {
+            if (x == null) {
+                break;
+            }
+            String temp = x.getKey() + "";
+            if (lengths[1] < temp.length() + padding) {
+                lengths[1] = temp.length() + padding;
+            }
+            temp = x.getValue() + "";
+            if (lengths[2] < temp.length() + padding) {
+                lengths[2] = temp.length() + padding;
+            }
+
+        }
+        biggest = lengths;
+    }
+
+}

@@ -1,0 +1,15 @@
+
+package Lab;
+
+/**
+ * @author Sean R Hagen
+ * Version Apr 11, 2019 
+ */
+public class Comparator<K> implements Comparable<K>{
+
+    @Override
+    public int compare(K a, K b) {
+        return -1;
+    }
+
+}

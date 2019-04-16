@@ -1,0 +1,13 @@
+
+package Lab;
+
+/**
+ *
+ * @author Sean R Hagen
+ * Version Apr 11, 2019
+ */
+public interface Comparable<K> {
+    
+    int compare(K a, K b); 
+
+}

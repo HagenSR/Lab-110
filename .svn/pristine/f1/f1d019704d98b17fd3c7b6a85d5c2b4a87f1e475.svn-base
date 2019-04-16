@@ -1,0 +1,36 @@
+package Lab;
+
+/**
+ * @author Sean R Hagen Version Apr 11, 2019
+ * @param <K>
+ */
+public class Sort<K> {
+
+    /**
+     * Adopted from Java Illuminated Example 8.18
+     *
+     * @param unsorted an unsorted array that needs to be sorted
+     * @param c the comparator you wish to sort on
+     * @return a sorted array using a simple bubble sort method
+     */
+    public K[] simpleBubbleSort(K[] unsorted, Comparator<Employee> c) {
+        K temp;
+        K max;
+
+        for (int i = 0; i < unsorted.length; i++) {
+            max = indexOfLargestElement(unsorted, unsorted.length -1);
+
+        }
+    }
+
+    private int indexOfLargestElement(K[] array, int size, Comparator<Employee> c) {
+        int index = 0;
+        for (int i = 1; i < size; i++) {
+            if (c.compare(array[index], array[i]) > 0) {
+                index = i;
+            }
+        }
+        return index;
+    }
+
+}

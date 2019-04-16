@@ -1,0 +1,43 @@
+
+package Lab;
+
+/**
+ * @author Sean R Hagen
+ * Version Apr 10, 2019 
+ */
+class MapEntryInt {
+
+
+/**
+ * @author Sean R Hagen Version Apr 2, 2019 Generics were giving me issues, so I
+ * have converted both generic types in this class to ints
+ */
+
+    private int k; //key
+    private int v; //Value
+
+    public MapEntryInt(int key, int value) {
+        k = key;
+        v = value;
+    }
+
+    public int getKey() {
+        return k;
+    }
+
+    public int getValue() {
+        return v;
+    }
+
+    protected void setKey(int key) {
+        k = key;
+    }
+
+    protected int setValue(int value) {
+        int old = v;
+        v = value;
+        return old;
+    }
+
+}
+

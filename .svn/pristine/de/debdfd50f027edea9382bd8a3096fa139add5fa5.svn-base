@@ -1,0 +1,20 @@
+package Lab;
+
+import sun.invoke.empty.Empty;
+
+/**
+ *
+ * @author seanr
+ */
+public class Client {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Employee s = new Employee();
+        System.out.println(s.toString());
+                  
+    }
+    
+}
