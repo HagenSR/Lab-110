@@ -3,14 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/seanr/Documents/NetBeansProjects/Lab110-HagenSR/src/Lab/Comparator.java</file>
             <file>file:/C:/Users/seanr/Documents/NetBeansProjects/Lab110-HagenSR/src/Lab/Employee.java</file>
-            <file>file:/C:/Users/seanr/Documents/NetBeansProjects/Lab110-HagenSR/src/Lab/MapEntryInt.java</file>
+            <file>file:/C:/Users/seanr/Documents/NetBeansProjects/Lab110-HagenSR/src/Lab/Comparators/EmployeeNameComparator.java</file>
             <file>file:/C:/Users/seanr/Documents/NetBeansProjects/Lab110-HagenSR/src/Lab/Sort.java</file>
             <file>file:/C:/Users/seanr/Documents/NetBeansProjects/Lab110-HagenSR/src/Lab/Client.java</file>
             <file>file:/C:/Users/seanr/Documents/NetBeansProjects/Lab110-HagenSR/src/Lab/TableCreator.java</file>
-            <file>file:/C:/Users/seanr/Documents/NetBeansProjects/Lab110-HagenSR/src/Lab/EmployeeComparator.java</file>
-            <file>file:/C:/Users/seanr/Documents/NetBeansProjects/Lab110-HagenSR/src/Project/Lab107/LinkedBinaryTree.java</file>
         </group>
     </open-files>
 </project-private>
